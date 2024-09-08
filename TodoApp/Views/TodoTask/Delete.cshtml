@@ -1,0 +1,42 @@
+﻿@model TodoTask
+
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="TaskId" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete the Task</h2>
+            <hr />
+            <!-- Hidden field for TaskId -->
+            @* <input asp-for="TaskId" type="hidden" /> *@
+            <input type="hidden" name="id" asp-for="TaskId" />
+        </div>
+        <!-- Displaying the TaskName and Description, these fields are disabled to prevent editing -->
+        <div class="mb-3">
+            <label asp-for="TaskName"></label>
+            <input asp-for="TaskName" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatedDateTime"></label>
+            <input asp-for="CreatedDateTime" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DueDate"></label>
+            <input asp-for="DueDate" disabled class="form-control" />
+        </div>
+        <!-- Buttons to delete or cancel -->
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-controller="TodoTask" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back To List
+        </a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

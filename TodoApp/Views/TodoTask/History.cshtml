@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TodoApp.Models.TodoTask>
+
+<br />
+<br />
+<u><center><h1>Completed Tasks</h1></center></u>
+
+<div class="container p-3">
+    <div class="border p-6 mt-4">
+        <table class="table table-striped-columns" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Completed Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@task.TaskName</td>
+                        <td>@task.Description</td>
+                        <td>@task.DoneDateTime?.ToString("g")</td> <!-- Display the completion date -->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

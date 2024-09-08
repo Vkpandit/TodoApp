@@ -1,0 +1,43 @@
+﻿@model TodoTask
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Update the Task</h2>
+            <hr />
+        </div>
+        <input type="hidden" asp-for="TaskId" />
+        @* <div asp-validation-summary="All"></div> *@
+        <div class="mb-3">
+            <label asp-for="TaskName"></label>
+            <input asp-for="TaskName" class="form-control" />
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatedDateTime"></label>
+            <input asp-for="CreatedDateTime" class="form-control" />
+            <span asp-validation-for="CreatedDateTime" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DueDate"></label>
+            <input asp-for="DueDate" class="form-control" />
+            <span asp-validation-for="DueDate" class="text-danger"></span>
+        </div>
+        <button typeof="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="TodoTask" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back To List
+        </a>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
