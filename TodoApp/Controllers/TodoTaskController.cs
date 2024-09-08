@@ -24,8 +24,6 @@ public class TodoTaskController : Controller
     //Create GET
     public IActionResult Create()
     {
-        //var objTodoTaskList=_db.Tasks.ToList(); //instead we can use the below line
-
         return View();
     }
 
@@ -125,7 +123,6 @@ public class TodoTaskController : Controller
         return RedirectToAction("Index");
     }
 
-    ////////
     //History GET
     public IActionResult MarkAsDone(int id)
     {
@@ -151,5 +148,4 @@ public class TodoTaskController : Controller
         return View(completedTasks);
     }
 
-    //////
 }

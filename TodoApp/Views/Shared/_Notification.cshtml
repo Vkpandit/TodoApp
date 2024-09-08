@@ -1,23 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-
-@*if(TempData["success"] != null)
-{
-    <h2>@TempData["success"]</h2>
-}*@
-
-@*{
-    if(TempData["success"] != null)
-    {
-            <script type="text/javascript">
-                alert('@TempData["success"]');
-            </script>
-    }
-}*@
-
-@{
+﻿@{
     if (TempData["success"] != null)
     {
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
